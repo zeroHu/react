@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>菜鸟教程 React 实例</title>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+	<script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+	<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      var LikeStatus = React.createClass({
+      	getInitialState : function(){
+      		return {
+      			linked:false
+      		}
+      	},
+      	changeClick:function(event){
+      		this.setState({
+      			linked:!this.state.linked
+      		})
+      	},
+      	render:function(){
+      		var text = this.state.linked ? 'zero' : 'jianxia';
+      		return (
+      			<p onClick={this.changeClick}>你的名字是{text} </p>
+      		)
+      	}
+      });
+      ReactDOM.render(
+        <LikeStatus />,
+        document.getElementById('example')
+      )
+    </script>
+  </body>
+</html>
